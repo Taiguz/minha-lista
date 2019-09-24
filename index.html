@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Um site para guardar os meus favoritos">
+    <meta name="keywords" content="Minha lista,series,filmes,jogos,animes">
+    <meta name="author" content="Thiago Angelo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -10,7 +13,52 @@
 </head>
 
 <body>
-
+    <header>
+        <h1>Minha Lista de</h1>
+        <select>
+            <option value="filmes">Filmes</option>
+            <option value="series">Séries</option>
+            <option value="games">Games</option>
+            <option value="animes">Animes</option>
+        </select>
+        <img src="./assets/imgs/filmes.svg">
+    </header>
+    <section>
+        <input class="campo-nome" type="text" placeholder="Qual o nome do filme ?">
+        <input class="campo-nota" type="number" max="10" min="0" placeholder="10.00">
+        <button><img src="./assets/imgs/adicionar.svg" alt="adicionar a lista"></button>
+    </section>
+    <section class="listas">
+        <ul id="filmes">
+            <li>
+                <img src="./assets/imgs/heart.svg">
+                <p>Interstelar</p>
+                <p>10.00/10.00</p><button></button>
+            </li>
+        </ul>
+        <ul id="series">
+            <li>
+                <img src="./assets/imgs/broken.svg">
+                <p>Dexter</p>
+                <p>4.00/10.00</p><button></button>
+            </li>
+        </ul>
+        <ul id="games">
+            <li>
+                <img src="./assets/imgs/heart.svg">
+                <p>GTA</p>
+                <p>8.00/10.00</p><button></button>
+            </li>
+        </ul>
+        <ul id="animes">
+            <li>
+                <img src="./assets/imgs/heart.svg">
+                <p>Mirai Nikki</p>
+                <p>9.00/10.00</p><button></button>
+            </li>
+        </ul>
+        <p>Sem itens :(</p>
+    </section>
     <script src="js/script.js"></script>
 </body>
 

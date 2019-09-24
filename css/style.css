@@ -1,0 +1,8 @@
+@font-face {
+    font-family: vibes;
+    src: url(./css/fonts/Vibes-Regular.ttf);
+  }
+  
+html,body{
+    font-family: vibes
+}
