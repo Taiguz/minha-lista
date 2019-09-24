@@ -93,7 +93,7 @@ const excluirItem = (item, lista) => {
     }, {
         transform: 'scale(0.8)',
         opacity: '0'
-    }], 100)
+    }], 200)
     animacao.onfinish = () => {
         lista.elementoHtml.removeChild(item)
         salvar()
@@ -113,7 +113,7 @@ const criarItem = (nome, nota, listaAberta) => {
     li.append(heart, nomeElemento, notaElemento, botaoFechar)
     botaoFechar.onclick = () => excluirItem(li, listaAberta)
     nomeElemento.textContent = nome
-    notaElemento.textContent = `${parseInt(nota).toFixed(2)}/10.00`
+    notaElemento.textContent = `${parseFloat(nota).toFixed(2)}/10.00`
     nota > 5 ? heart.setAttribute('src', './assets/imgs/heart.svg') : heart.setAttribute('src', './assets/imgs/broken.svg')
     return li
 }
