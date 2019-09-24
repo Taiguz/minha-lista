@@ -8,7 +8,8 @@
     <meta name="author" content="Thiago Angelo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./icon.png">
     <title>Minha Lista</title>
 </head>
 
@@ -23,41 +24,52 @@
         </select>
         <img src="./assets/imgs/filmes.svg">
     </header>
-    <section>
-        <input class="campo-nome" type="text" placeholder="Qual o nome do filme ?">
-        <input class="campo-nota" type="number" max="10" min="0" placeholder="10.00">
+    <section class="campo">
+        <input type="text" placeholder="Qual o nome do filme ?">
+        <input class="campo-nota" type="number" max="10" min="0" placeholder="Nota">
         <button><img src="./assets/imgs/adicionar.svg" alt="adicionar a lista"></button>
     </section>
     <section class="listas">
         <ul id="filmes">
             <li>
                 <img src="./assets/imgs/heart.svg">
-                <p>Interstelar</p>
-                <p>10.00/10.00</p><button></button>
+                <p class="descricao">Interstelar</p>
+                <p>10.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
             </li>
-        </ul>
-        <ul id="series">
+            <li>
+                <img src="./assets/imgs/heart.svg">
+                <p class="descricao">Vingadores</p>
+                <p>8.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
+            </li>
             <li>
                 <img src="./assets/imgs/broken.svg">
-                <p>Dexter</p>
-                <p>4.00/10.00</p><button></button>
+                <p class="descricao">Capitão América</p>
+                <p>4.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
+            </li>
+
+        </ul>
+        <ul id="series" class="hidden">
+            <li>
+                <img src="./assets/imgs/heart.svg">
+                <p>Black Mirror</p>
+                <p>4.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
             </li>
         </ul>
-        <ul id="games">
+        <ul id="games" class="hidden">
             <li>
                 <img src="./assets/imgs/heart.svg">
                 <p>GTA</p>
-                <p>8.00/10.00</p><button></button>
+                <p>8.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
             </li>
         </ul>
-        <ul id="animes">
+        <ul id="animes" class="hidden">
             <li>
                 <img src="./assets/imgs/heart.svg">
-                <p>Mirai Nikki</p>
-                <p>9.00/10.00</p><button></button>
+                <p>Dragon Ball</p>
+                <p>9.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
             </li>
         </ul>
-        <p>Sem itens :(</p>
+        <h2 class="hidden">Sem itens :(</h2>
     </section>
     <script src="js/script.js"></script>
 </body>
