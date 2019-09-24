@@ -25,13 +25,13 @@
         <img src="./assets/imgs/filmes.svg">
     </header>
     <section class="campo">
-        <input type="text" placeholder="Qual o nome do filme ?">
-        <input class="campo-nota" type="number" max="10" min="0" placeholder="Nota">
+        <input id="nome" type="text" placeholder="Qual o nome do filme ?">
+        <input id="nota" class="campo-nota" type="number" max="10" min="0" placeholder="Nota">
         <button><img src="./assets/imgs/adicionar.svg" alt="adicionar a lista"></button>
     </section>
     <section class="listas">
-        <ul id="filmes">
-            <li>
+        <ul id="filmes" class="hidden">
+            <!-- <li>
                 <img src="./assets/imgs/heart.svg">
                 <p class="descricao">Interstelar</p>
                 <p>10.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
@@ -45,31 +45,30 @@
                 <img src="./assets/imgs/broken.svg">
                 <p class="descricao">Capitão América</p>
                 <p>4.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
-            </li>
-
+            </li> -->
         </ul>
         <ul id="series" class="hidden">
-            <li>
+            <!-- <li>
                 <img src="./assets/imgs/heart.svg">
                 <p>Black Mirror</p>
                 <p>4.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
-            </li>
+            </li> -->
         </ul>
         <ul id="games" class="hidden">
-            <li>
+            <!-- <li>
                 <img src="./assets/imgs/heart.svg">
                 <p>GTA</p>
                 <p>8.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
-            </li>
+            </li> -->
         </ul>
         <ul id="animes" class="hidden">
-            <li>
+            <!-- <li>
                 <img src="./assets/imgs/heart.svg">
                 <p>Dragon Ball</p>
                 <p>9.00/10.00</p><button><img src="./assets/imgs/close.svg"></button>
-            </li>
+            </li> -->
         </ul>
-        <h2 class="hidden">Sem itens :(</h2>
+        <div class="loader"></div>
     </section>
     <script src="js/script.js"></script>
 </body>
