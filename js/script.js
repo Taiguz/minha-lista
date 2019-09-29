@@ -11,6 +11,59 @@ const placeholderListas = [
     'Qual o nome do game ?',
     'Qual o nome do anime ?'
 ]
+
+const save = () => {
+
+    let listasTransformadas = Array.from(listas)
+        .map(lista => {
+            return {
+                nomeLista: lista.getAttribute('id'),
+                itens: Array.from(lista.children)
+                    .map(filho => {
+                        const [descricao, nota] = filho.querySelectorAll('p')
+                        return {
+                            descricao: descricao.textContent,
+                            nota: parseFloat(nota.textContent.split('/')[0])
+                        }
+                    })
+            }
+        })
+
+    localStorage.setItem('lista', JSON.stringify(listasTransformadas))
+}
+
+const load = () => {
+    let listas = JSON.parse(localStorage.getItem('lista'))
+    if (listas) {
+        listas.forEach(lista => {
+            let listaElemento = document.querySelector(`#${lista.nomeLista}`)
+            lista.itens.forEach(item => {
+                criarItem(item.descricao, item.nota, listaElemento)
+            })
+
+        })
+
+    }
+
+}
+
+const excluirItem = (item, lista) => {
+
+    let animation = item.animate([{
+        opacity: '1',
+        transform: 'scale(1)'
+    }, {
+        opacity: '0',
+        transform: 'scale(0.8)'
+    }], 200)
+
+    animation.onfinish = () => {
+
+        lista.removeChild(item)
+        save()
+    }
+}
+
 const criarItem = (descricao, nota, lista) => {
 
     const li = document.createElement('li')
@@ -28,6 +81,8 @@ const criarItem = (descricao, nota, lista) => {
     buttonImg.setAttribute('src', './assets/imgs/close.svg')
 
     button.appendChild(buttonImg)
+
+    button.onclick = () => excluirItem(li, lista)
 
     let notaFormatada = `${parseFloat(inputNota.value).toFixed(2)}/10.00`
 
@@ -57,7 +112,7 @@ const adicionarLista = () => {
 
 
         criarItem(inputNome.value, inputNota.value, listaSelecionada)
-
+        save()
         inputNome.value = ''
         inputNota.value = ''
 
@@ -90,3 +145,5 @@ const transicaoLista = nomeLista => {
 adicionarBt.onclick = adicionarLista
 
 selectListas.onchange = () => transicaoLista(selectListas.value)
+
+load()
